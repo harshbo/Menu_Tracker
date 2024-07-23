@@ -1,0 +1,57 @@
+/* menu.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2; /* Light gray background color */
+    margin: 0; /* Remove default margin for the body */
+    padding: 0; /* Remove default padding for the body */
+}
+
+.header {
+    background-color: #982B14; /* Dark gray background color for header */
+    color: #fff; /* White text color */
+    padding: 10px;
+    text-align: center;
+}
+
+.footer {
+    background-color: #982B14; /* Dark gray background color for footer */
+    color: #fff; /* White text color */
+    padding: 10px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+/* Styling for main heading */
+h1 {
+    color: navy; /* Coral Orange */
+}
+
+/* Styling for subheadings */
+h2, h3 {
+    color: #B21010; /* Sky Blue */
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #333;
+    margin: 20px 0;
+    color: red;
+}
+
+.menu-item {
+    margin-bottom: 20px;
+    border-left: 2px solid blue; /* Adding left border with blue color */
+    border-right: 2px solid blue; /* Adding right border with blue color */
+    padding: 10px; /* Adding padding for better spacing */
+}
+img {
+    display: block;
+    margin: 0 auto;
+}
+.menu-item {
+    margin-bottom: 20px;
+}

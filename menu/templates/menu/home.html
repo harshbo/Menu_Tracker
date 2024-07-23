@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <nav
+      class="bg-white border-gray-200 border-b-2 shadow-xl"
+      style="border-color: #9f282c"
+    >
+      <div class="flex items-center justify-center my-2 flex-grow">
+        <div>
+          <img src="{% static 'menu/images/logo.png' %}" alt="GITAM Logo" class="h-10 sm:h-16" />
+        </div>
+      </div>
+    </nav>
+    {% if error %}
+      <h1>{{error}}</h1>
+    {% endif %}
+    <form method="post">
+      {% csrf_token %}
+      <div class="flex sm:flex-row flex-col justify-center mt-5 sm:mt-10">
+        <div class="sm:mx-2 mx-4">
+          <label for="" class="block mb-2 text-lg font-medium text-gray-900"
+            >Choose a Day</label
+          >
+          <select
+            name="day"
+            class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full sm:w-96 p-2.5"
+          >
+            <option selected>----DAY----</option>
+            {% for day in days %}
+            <option value="{{day}}">{{day}}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="sm:mx-2 mx-4">
+            <label for="" class="block mb-2 text-lg font-medium text-gray-900"
+            >Select a session</label
+          >
+          <select
+            name="session"
+            class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full sm:w-96 p-2.5"
+          >
+            <option selected>----SECTION-----</option>
+            {% for session in sessions %}
+            <option value="{{session}}">{{session}}</option>
+            {% endfor %}
+          </select>
+            
+        </div>
+      </div>
+      <div class="flex justify-center mt-5">
+        <button type="submit" class="bg-blue-500 px-10 rounded-lg text-white py-2 hover: bg-blue-100">Submit</button>
+      </div>
+      
+    </form>
+    
+      <div class="md:mt-7 mt-5">
+        <ul>
+            <li class=" text-center text-[#9f282c] font-medium">
+              {% if data %}
+                <h1>{{data.day.name}}</h1>
+              {% endif %}
+            </li>
+          
+        </ul>
+      </div>
+    
+  </body>
+</html>

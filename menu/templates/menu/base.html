@@ -1,0 +1,185 @@
+{% load static %}
+<html>
+<head>
+    <title>Your Page Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'menu/css/menu.css' %}">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+        .align-right {
+            text-align: right;
+        }
+        
+        .blue-button {
+            background-color: #3870e0;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+  
+</head>
+
+
+<body>
+      <nav
+      class="bg-white border-gray-200 border-b-2 shadow-xl"
+      style="border-color: #9f282c"
+    >
+      <div class="flex items-center  justify-center my-2 flex-grow">
+        <div>
+          <img src="{% static 'menu/images/logo.png' %}" alt="GITAM Logo" class="h-10 sm:h-16" />
+        </div>
+      </div>
+    </nav>
+ <div class="align-right">
+    <a href="{% url 'home' %}" class="blue-button">Back</a>
+</div>
+  
+<center><h1><i> MENU</i></h1></center><br>
+{% if data2 %}
+  <h1 class='text-black font-bold mb-2'> Day: {{data2.day.name}}</h1>
+
+  <div class="flex flex-wrap flex-col lg:flex-row justify-center items-center">
+  <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Rice:{{data2.rice}}</h3>
+</div>
+   <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+<h3>Curries:{{data2.curries}}</h3> 
+</div>
+   <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Dal items:{{data2.dal}}</h3>
+</div>
+<div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Chips:{% if data2.chips %}Available{% else %}Not Available{% endif %}</h3>      
+</div>
+<div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Curd:{% if data2.curd %}Available{% else %}Not Available{% endif %}</h3>      
+</div>
+<div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Chapati:{% if data2.chapati %}Available{% else %}Not Available{% endif %}</h3>      
+</div>
+    <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Juice :{{data2.juice}}</h3>
+</div>
+    <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Salad :{{data2.salad}}</h3>
+</div>
+    <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Pickle :{{data2.pickle}}</h3>
+</div>
+<div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Dessert :{{data2.dessert}}</h3>
+</div>
+  </div>
+
+
+  {% endif %}
+
+{% if data3 %}
+  <h3> Day: {{data3.day.name}}</h3><br>
+  
+  <div class="flex flex-wrap flex-col lg:flex-row justify-center items-center">
+   <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Snack items :{{data3.snack}}</h3>
+</div>
+   <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Milk : {% if data3.milk%} Available {% else %} Not Available {% endif %}</h3>
+</div>
+  
+   <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Varities : {{data3.var}}</h3>
+</div>
+  </div>
+  {% endif %}
+  
+
+
+
+
+  
+{% if data1 %}
+  <h3> Day: {{data1.day.name}}</h3><br>
+  <div class="flex flex-wrap flex-col lg:flex-row justify-center items-center">
+  <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Tiffen :{{data1.tiffen}}</h3>
+</div>
+   <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Eggs:{% if data1.eggs %}Available {% else %} Not Available {% endif %}</h3>
+</div>
+  <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Raagi:{% if data1.raagi %} Available {% else %} Not Available {% endif %}</h3>
+</div>
+   <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Juice : {{ data1.juice }}</h3>
+</div>
+  <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Oats : {% if data1.oats %} Available {% else %} Not Available {% endif %}</h3>
+</div>
+  <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Milk : {% if data1.milk %} Available {% else %} Not Available {% endif %}</h3>
+</div>
+   <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Varities : {{data1.var}}</h3>
+</div>
+  </div>
+
+  
+{% endif %}
+
+
+
+
+  
+{% if data4 %}
+<h3> Day: {{data4.day.name}}</h3><br>
+  <div class="flex flex-wrap flex-col lg:flex-row justify-center items-center">
+  <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Rice:{{data4.rice}}</h3>
+</div>
+
+  <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Curries:{{data4.curries}}</h3>
+</div>
+
+   <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Dal items:{{data4.dal}}</h3>
+</div>
+
+  
+   <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Chips:{% if data4.chips %} Available {% else %} Not Available {% endif %}</h3>
+</div>
+
+  <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Curd :{% if data4.curd %}Available {% else %} Not Available {% endif %}</h3>
+</div>
+  
+   <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Chapati:{% if data4.chapati %} Available {% else %} Not Available {% endif %}</h3>
+</div>
+
+  <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Pickle:{{data4.pickle}}</h3>
+</div>
+
+  <div href="#" class="block w-60 p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 ">
+   <h3>Dessert:{{data4.dessert}}</h3>
+</div>
+
+  </div>
+
+
+  {% endif %}
+
+  
+
+</body>
+</html>
+ 
